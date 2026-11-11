@@ -6,11 +6,11 @@
 \usepackage{xcolor,hyperref,bookmark,fancyhdr}
 \definecolor{linkblue}{HTML}{164B76}
 \hypersetup{colorlinks=true,linkcolor=linkblue,urlcolor=linkblue,citecolor=linkblue,
- pdftitle={Deformation invariance of plurigenera in fiberwise Kahler families},
+ pdftitle={Deformation invariance of plurigenera in fiberwise Kähler families},
  pdfauthor={Tseng}}
 \pagestyle{fancy}\fancyhf{}
 \fancyhead[L]{\small Deformation invariance of plurigenera}
-\fancyhead[R]{\small 10 November 2026}
+\fancyhead[R]{\small 11 November 2026}
 \fancyfoot[C]{\thepage}
 \setlength{\parindent}{1.3em}\setlength{\parskip}{3pt}
 \setlist{itemsep=4pt,topsep=5pt}
@@ -30,23 +30,27 @@
 \newcommand{\per}{\operatorname{per}}\newcommand{\Tr}{\operatorname{Tr}}
 \title{Deformation invariance of plurigenera\\in fiberwise Kähler families}
 \author{Tseng}
-\date{10 November 2026}
+\date{11 November 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
-We prove that every plurigenus is constant in a proper surjective
-holomorphic submersion over a disk with connected compact Kähler fibers,
-in arbitrary fiber dimension. The proof combines OpenAI's logarithmic
-subadditivity and abundance results with Kollár's deformation method
-and Levine's cyclic-cover argument. For a fiber with pseudoeffective
-canonical divisor, the birational constructions yield a finite ordinary
-minimal model program ending at a terminal model with semiample
-canonical divisor. We extend this sequence over the analytic family
-and establish pluricanonical extension from its central fiber.
-The extension argument uses Cohen--Macaulay reflexive canonical powers
-and logarithmic Hodge theory on a compact Kähler resolution of a
-canonical cyclic cover. A period injection eliminates the finite-order
-obstructions, and coherence gives analytic extension.
+We prove deformation invariance of every plurigenus in a proper
+surjective holomorphic submersion over a disk whose fibers are connected
+compact Kähler manifolds, in arbitrary dimension. From OpenAI's
+logarithmic subadditivity and good divisorial decomposition results,
+we derive a finite
+ordinary minimal model program starting on a chosen smooth fiber with
+pseudoeffective canonical divisor. Hacon--Xie's deformation theorem
+extends this program over the analytic family. Its semiample terminal
+central fiber is covered by the classical extension argument of Levine
+and Kollár--Mori. We also give a canonical extension theorem for
+central fibers that are smooth in codimension two and admit
+a compact Kähler modification. The proof combines Cohen--Macaulay
+reflexive canonical powers, logarithmic Hodge theory, and a Leray
+comparison to obtain a central period injection. Levine's trace formula
+then annihilates the extension obstruction. Character summands recover
+every pluricanonical degree, and coherence converts finite-order lifts
+into analytic sections.
 \end{abstract}
 \tableofcontents
 \section{Introduction and preliminaries}
@@ -54,11 +58,10 @@ obstructions, and coherence gives analytic extension.
 Deformation invariance of plurigenera for compact complex surfaces is
 due to Iitaka \cite[Theorem~III]{Iitaka1970}. In arbitrary dimension,
 Siu established invariance for smooth projective families, first for
-fibers of general type \cite{Siu1998} and subsequently in general
+fibers of general type \cite[Main Theorem, p.~661]{Siu1998} and subsequently in general
 \cite[Corollary~0.3]{Siu2002}. He also formulated the corresponding
 conjecture for compact Kähler manifolds
-\cite[Conjecture~0.4]{Siu2002}. We prove the following statement, with
-the Kähler condition imposed on the individual fibers.
+\cite[Conjecture~0.4]{Siu2002}. We prove the following statement.
 
 \begin{theorem}\label{thm:main}
 Let $\Delta=\{t\in\C:|t|<1\}$, let $\cX$ be a complex manifold, and let
@@ -72,50 +75,95 @@ Then, for every integer $m\ge1$, the function
 is constant on $\Delta$.
 \end{theorem}
 
-The cases of fiber dimension at most two are classical and are recalled
-in Section~5. In higher dimension, the proof brings together absolute
-birational constructions, deformation of a finite minimal model
-program, and pluricanonical extension from its singular central fiber.
-The Kähler geometry is used on models of a fixed fiber and on a
-resolution of its cyclic cover; the passage through the family is analytic.
+Recent work has established invariance in several Kähler settings.
+Deng, Ning, Wang, and Zhou \cite[Theorem~1.1]{DNWZ2026} prove
+invariance when the total space is Kähler and every fiber has nef
+canonical bundle. Chen, Rao, and Wang
+\cite[Theorems~1.2--1.4]{CRW2026} obtain local invariance for smooth
+proper Kähler morphisms from the nefness of the central canonical
+bundle. Li, Păun, Wang, and Zhou \cite[Theorem~1.2]{LPWZ2026}
+prove invariance in arbitrary dimension for smooth proper families
+with Kähler total space, without a nefness assumption.
+Liu and Wan \cite[Theorem~1.1]{LW2026} establish the corresponding
+logarithmic extension theorem for rational boundaries with relative
+simple normal crossings and coefficients in $[0,1)$, again with
+Kähler total space.
 
-OpenAI's logarithmic subadditivity theorem
+The threefold case is also studied by Hacon, Li, and Rao
+\cite[Theorem~6.5]{HLR2026}. Feng, Li, and Rao
+\cite[Theorems~1.4 and~1.5]{FLR2026} prove invariance for
+$\Q$-factorial Kähler families of threefolds with canonical central
+fiber and for smooth Kähler families whose central fiber has maximal
+Albanese dimension.
+In their terminology, a Kähler family has Kähler total space.
+
+Theorem~\ref{thm:main} establishes invariance in arbitrary dimension
+under the fiberwise Kähler hypothesis.
+A related local question, with nef canonical bundle on the central
+fiber, is posed in \cite[Question~1.6]{CRW2026}.
+The cases of fiber dimension at most two are classical and are recalled
+in Section~\ref{sec:main-proof}. In higher dimension, the argument is
+local on the base and is carried out separately for each pluricanonical
+degree. Upper semicontinuity settles the case of a vanishing central
+plurigenus. Otherwise, a nonzero pluricanonical section makes the
+central canonical divisor pseudoeffective, and the proof proceeds
+through three constructions.
+
+First, OpenAI's logarithmic subadditivity theorem
 \cite[Corollary~6.2]{OAI033} supplies the reduced simple normal crossing
 case of logarithmic Iitaka subadditivity assumed in
 \cite[Assumption~1.1]{OAI034}. We therefore use the good divisorial
 decomposition theorem \cite[Theorem~2.13]{OAI034} and the ordinary and
 relative model constructions of that paper.
-Proposition~\ref{prop:finite-original} arranges these constructions into
-a finite ordinary $K$-MMP beginning with the chosen fiber.
-Its proof adapts the fixed-part, small-model, and nef-interval
+Proposition~\ref{prop:finite-original}, proved in
+Section~\ref{sec:finite-program}, derives from these constructions
+a finite ordinary $K$-MMP beginning with the
+chosen smooth fiber and ending at a terminal model with semiample
+canonical divisor. Its proof uses the good decomposition in the ambient
+dimension and adapts the fixed-part, small-model, and nef-interval
 constructions of \cite[Proposition~3.8 and Lemmas~3.11--3.12]{OAI034},
-and the comparison of negative multiplicities in the proof of
+together with the comparison of negative multiplicities in the proof of
 \cite[Theorem~3.13]{OAI034}.
 
-Proposition~\ref{prop:finite-family} extends the prescribed finite
-sequence over the family by adapting Kollár's deformation construction
-\cite[paragraph~8]{Kollar2021}. The individual contractions are
-relatively projective. Their extension, and the construction of the
-relative flip algebra, use the local and relative analytic results
-stated in Section~\ref{sec:family-program}.
+Second, the deformation step is supplied by Hacon and Xie
+\cite[Theorem~7.7]{HX2026}. Their theorem extends prescribed central
+MMP steps in proper flat analytic families over a smooth curve with Kähler canonical
+central fiber. Its Kähler hypothesis concerns the central fiber;
+in our application the boundary and generalized nef data are zero,
+so the additional boundary conditions are automatic.
+Proposition~\ref{prop:finite-family} gives the ordinary, relatively
+projective construction explicitly, including the central canonical
+algebra and the comparison of pluricanonical sections in every degree.
+The proof follows Kollár's deformation framework
+\cite[paragraph~8]{Kollar2021}, using Nakayama's analytic restriction
+and deformation results \cite[VI.3.8 and VI.5.2]{Nakayama2004}.
 
-Theorem~\ref{thm:terminal-extension} adapts Levine's cyclic-cover and
-Hodge-theoretic method \cite[Proposition~1.6 and Corollaries~1.8 and~1.10]{Levine1983}
-to the terminal central fiber with semiample canonical divisor produced
-by this program.
-Cohen--Macaulayness compares the relevant cohomology with that of the
-smooth locus. Logarithmic Hodge-to-de Rham degeneration, in the compact
-Kähler form proved by Liu, Rao, and Wan \cite[Theorem~3.2]{LRW2019},
-then gives a period injection on a resolution of the central cover.
-Its infinitesimal counterpart annihilates Levine's central-section
-obstruction. The character summands recover the lower pluricanonical
-powers, and coherence of higher direct images gives analytic extension.
-Birational invariance then completes the proof in Section~5.
+Finally, the semiample terminal extension result needed at the endpoint
+is classical: the proof of Kollár--Mori
+\cite[Theorem~12.5.5]{KM1992} applies in Fujiki's class $\mathcal C$,
+as recorded by Kollár \cite[comments following Conjecture~17]{Kollar2021}.
+Theorem~\ref{thm:terminal-extension} extends this terminal
+class-$\mathcal C$ formulation to canonical central fibers smooth in
+codimension two and admitting a compact Kähler modification.
+We prove this canonical statement using the cyclic-cover method of Levine
+\cite[Proposition~1.6 and Corollaries~1.8 and~1.10]{Levine1983}
+and Kollár--Mori. Cohen--Macaulayness identifies the relevant first
+cohomology with that of the smooth locus.
+On a compact Kähler resolution of the central cover, Deligne's
+logarithmic Hodge-to-de Rham degeneration, in the formulation of
+Liu, Rao, and Wan \cite[Theorem~3.2]{LRW2019}, gives an injection
+into logarithmic de Rham cohomology. A Leray comparison and de Rham
+naturality then imply that the central period map is injective.
+Its infinitesimal counterpart annihilates the extension obstruction.
+The character summands recover every lower pluricanonical degree, and
+coherence converts finite-order lifts into analytic sections.
+Birational invariance completes the proof in
+Section~\ref{sec:main-proof}.
 
 \subsection{Notation and conventions}
 
-The letter $n$ denotes the complex dimension of the spaces under
-consideration.
+The letter $n$ denotes the dimension of the fibers and their
+bimeromorphic models.
 For a normal $\Q$-Gorenstein space, $\omega_X^{[m]}$ denotes the reflexive
 canonical power. The notation $L\sim_\Q L'$ means that there is a positive
 integer $r$ for which $rL$ and $rL'$ are holomorphic line bundles and are
@@ -132,9 +180,11 @@ of divisorial contractions and flips of $K$-negative extremal rays.
 Braces $\{D\}$ denote the Bott--Chern
 class of a divisor. In formulas involving classes, a rational line bundle
 is identified with its first Chern class.
+Canonical comparisons are understood through local meromorphic
+canonical identifications; their discrepancy divisors are global.
 
-Following Boucksom's analytic divisorial Zariski decomposition
-\cite{Boucksom}, we write $N(\alpha)$ for the divisorial negative part
+Following Boucksom's analytic divisorial Zariski decomposition,
+we write $N(\alpha)$ for the divisorial negative part
 of a pseudoeffective Bott--Chern class.
 On a smooth compact Kähler model, with Kähler form
 $\omega$, the divisorial minimal multiplicities are
@@ -143,7 +193,9 @@ $\omega$, the divisorial minimal multiplicities are
  \inf_{T\in\alpha,\ T\ge-\epsilon\omega}\nu_D(T),
  \qquad N(\alpha)=\sum_D\nu_D(\alpha)D.
 \]
-The support of this sum is finite. The class is \emph{modified nef} when
+The support of this sum is finite
+\cite[Theorem~3.12\textup{(i)}]{Boucksom}.
+The class is \emph{modified nef} when
 all its minimal multiplicities along prime divisors on the current space
 vanish. On normal models, we use these notions on smooth resolutions and
 keep track of all divisorial places. Comparisons between models are made
@@ -185,8 +237,9 @@ we use the ordinary scaling programs constructed in
 and flips of $K$-negative extremal rays. The resulting
 spaces remain compact Kähler, terminal, and globally strongly
 $\Q$-factorial. The rays are tested against all Bott--Chern classes.
-The analytic cone estimate recalled in \cite[Section~3.1]{OAI034}
-supplies the dimension-dependent rational-curve length bound $N_n=2n+1$.
+The cone theorem recalled in \cite[Theorem~1.3]{HX2026} gives the
+rational-curve length bound $2n$. Following
+\cite[Section~3.1]{OAI034}, we use the uniform bound $N_n=2n+1$.
 
 Starting with a Kähler scaling class, such a $K$-program can be run,
 and only finitely many steps occur in every parameter interval
@@ -195,7 +248,8 @@ If $K$ is pseudoeffective and the program does not reach a nef model
 after finitely many steps, its positive scaling parameters tend to zero.
 The corresponding statements apply to $K+bP$, where $P$ is a nef
 rational line bundle on the current model: if $mP$ is Cartier and
-$b>4nm$, the steps can be chosen $K$-negative and $P$-trivial.
+$b\in\Q$ satisfies $b>4nm$, the steps can be chosen
+$K$-negative and $P$-trivial.
 
 The effective comparisons are those of \cite[Lemma~3.7]{OAI034}.
 The projective construction of the steps and finiteness at positive
@@ -293,11 +347,23 @@ lemma applies to each sign. We shall use this observation to recover
 exceptional-divisor identities from class comparisons.
 
 \section{Finite minimal model programs on the original space}
+\label{sec:finite-program}
 
-We organize the birational constructions of \cite{OAI034} into a finite
-ordinary $K_X$-MMP beginning with the given manifold $X$.
+We derive a finite ordinary $K_X$-MMP beginning with the given
+manifold $X$ from the birational constructions of \cite{OAI034}.
 This form of the conclusion supplies the individual contractions and
 flips to be extended over the family in Section~\ref{sec:family-program}.
+The Kodaira-dimension-zero case is contained in
+\cite[Corollary~3.10]{OAI034}.
+
+OpenAI's special-termination theorem
+\cite[Theorem~3.13]{OAI034} asserts that the exceptional, flipping,
+and flipped loci of a chosen dlt scaling eventually avoid the supports
+of the boundary floors on the successive models. For zero boundary,
+that condition places no restriction on
+the remaining flips. The proposition below establishes finiteness of a
+chosen entire ordinary $K$-program, using the good decomposition
+\cite[Theorem~2.13]{OAI034} in the ambient dimension.
 
 \begin{proposition}\label{prop:finite-original}
 Let $X$ be a smooth compact Kähler manifold with $K_X$ pseudoeffective.
@@ -306,8 +372,9 @@ compact Kähler terminal space with semiample canonical divisor
 $K_{X_{\min}}$.
 \end{proposition}
 
-The proof reduces a potentially infinite scaling to a model $T$ with
-$N(K_T)=0$. A small comparison model then makes the transforms of
+The proof reduces a potentially infinite scaling to an ambient terminal
+model $T$ with $N(K_T)=0$, and restarts with a Kähler scaling direction.
+A small comparison model then makes the transforms of
 $K_T+sA$ nef on one interval containing $s=0$. On a common resolution,
 every divisorial negative multiplicity is consequently affine throughout
 that interval. The comparison in the proof of
@@ -348,9 +415,12 @@ If $P\cdot C>0$, the fixed Cartier index gives $P\cdot C\ge1/m$, whence
 $H\cdot C\ge-N_n+b/m>0$, a contradiction. Thus every step is $P$-trivial.
 Statement \ref{in:descent} preserves both the same index $m$ and nefness.
 
-At a scaling step with
-threshold $\lambda_i>0$, let $E_i\ge0$ be the $H$-comparison divisor on a
-common model. The class at the threshold is pulled back from the contraction
+Let $T_i$ be the $i$th working model, with $T_0=T$, set $\lambda_{-1}=1$, and let
+$\lambda_i$ be its next scaling threshold. Then $H_i+\lambda A_i$ is nef
+for $\lambda\in[\lambda_i,\lambda_{i-1}]$; consecutive thresholds may
+coincide. At a step with $\lambda_i>0$, let $E_i\ge0$ be the
+$H$-comparison divisor on a common model.
+The class at the threshold is pulled back from the contraction
 base, so its two pullbacks agree. Consequently, for $0\le\lambda\le\lambda_i$,
 \begin{equation}\label{eq:scaling-comparison}
  p_i^*(H_i+\lambda A_i)-q_i^*(H_{i+1}+\lambda A_{i+1})
@@ -399,7 +469,7 @@ so they also preserve semiampleness.
 Fix \eqref{eq:good}. Let $T$ be a terminal model obtained from $X$ by a finite
 ordinary MMP. Choose a smooth common model $W$ dominating $Y$, $X$ and $T$,
 and write $r:W\to X$ and $s:W\to T$ for the resulting morphisms.
-Compatible canonical divisors satisfy
+The canonical meromorphic comparisons give
 \[
  K_W=r^*K_X+E_X=s^*K_T+E_T,
  \qquad E_X,E_T\ge0,
@@ -430,8 +500,9 @@ We adapt the normalized-graph construction of
 
 \begin{lemma}\label{lem:small-semiample}
 Suppose that the model $T$ above satisfies $N(K_T)=0$, with vanishing at every
-prime divisor on $T$. Then there is a compact Kähler terminal model $M$ that
-is small bimeromorphic to $T$ and has semiample canonical divisor $K_M$.
+prime divisor on $T$. Then there is a globally strongly $\Q$-factorial
+compact Kähler terminal model $M$ that is small bimeromorphic to $T$
+and has semiample canonical divisor $K_M$.
 The model $M$ will serve as a comparison model for an ordinary $K_T$-MMP.
 \end{lemma}
 
@@ -480,7 +551,8 @@ Lemma \ref{lem:contract-fixed} contracts $R_0+F$. Its support contains every
 $h$-exceptional prime divisor and contains no prime divisor coming from $T$.
 Moreover, every divisor contracted by the MMP belongs to this support.
 The resulting model $M$ is therefore small bimeromorphic to $T$, terminal and
-Kähler, with $K_M\sim_\Q P_M$ semiample.
+Kähler, with $K_M\sim_\Q P_M$ semiample. It is globally strongly
+$\Q$-factorial by statements~\ref{in:projrelative} and~\ref{in:steps}.
 \end{proof}
 
 \subsection{A common nef model for an interval}
@@ -492,8 +564,9 @@ as used in the proof of \cite[Theorem~3.13]{OAI034}.
 
 \begin{lemma}\label{lem:nef-interval}
 In the setting of Lemma \ref{lem:small-semiample}, let $A$ be a Kähler class
-on $T$. There are a compact Kähler terminal model $V$ small bimeromorphic to
-$T$, a forward trace $A_V$ of this class, and $\delta>0$ such that
+on $T$. There are a globally strongly $\Q$-factorial compact Kähler
+terminal model $V$ small bimeromorphic to $T$, a forward trace $A_V$
+of this class, and $\delta>0$ such that
 \[
  K_V+sA_V\text{ is nef}\qquad(0\le s\le\delta).
 \]
@@ -537,8 +610,9 @@ generalized klt. The total boundary-plus-nef trace is globally modified big,
 and $L$ is globally big and modified nef.
 
 Write $mP_M=g_M^*H$, where $g_M:M\to Z$ has connected fibers, $Z$ is normal
-projective, and $H$ is ample Cartier. Applying statement \ref{in:bigrelative}
-gives a good model $M\dashrightarrow V$ over $Z$. Set $P_V=g_V^*H/m$.
+projective, and $H$ is ample Cartier. Applying statement~\ref{in:bigrelative}
+gives a globally strongly $\Q$-factorial good model
+$M\dashrightarrow V$ over $Z$. Set $P_V=g_V^*H/m$.
 This map is small. Indeed, on a common model one has
 $a^*L=c^*L_V+E$, with $E\ge0$ and with strictly positive coefficient at every
 original prime divisor that is contracted. The class $L_V$ is a pseudoeffective
@@ -657,11 +731,24 @@ $K_X$-MMP beginning with $X$.
 \section{Deformation of finite minimal model programs}
 \label{sec:family-program}
 
-Proposition~\ref{prop:finite-original} supplies a finite ordinary $K$-MMP
-on the central fiber. We extend this sequence over the given analytic
-family by adapting Kollár's deformation construction
-\cite[paragraph~8]{Kollar2021} to the prescribed relatively projective
-contractions and flips.
+Hacon and Xie \cite[Theorem~7.7]{HX2026} prove that prescribed
+central MMP steps extend in proper flat analytic families over a smooth
+curve with Kähler canonical central fiber.
+Applied with zero boundary and zero generalized nef
+data, their theorem supplies the deformation step needed after
+Proposition~\ref{prop:finite-original}.
+We give the ordinary, relatively projective construction in
+Proposition~\ref{prop:finite-family}, identifying the central flip
+algebra in every degree and the pluricanonical section spaces on
+nearby fibers.
+
+The argument follows the deformation framework of Kollár
+\cite[paragraph~8]{Kollar2021}. Its form for generalized pairs with
+projective central fibers is developed by Hacon, Li, and Rao
+\cite[Proposition~4.16]{HLR2026}, with the Kähler threefold case
+noted in \cite[Remark~4.17]{HLR2026}; Hacon--Xie treat
+Kähler central fibers in arbitrary dimension. See also
+\cite[Theorem~2.28]{FLR2026}.
 
 \subsection{Birational invariance of reflexive pluricanonical sections}
 
@@ -762,10 +849,10 @@ Cartier near that point and all nearby fibers have canonical
 singularities there. The total space is canonical,
 and the exceptional discrepancies of the pair $(\mathfrak X,X_0)$
 are nonnegative. The relative $\Q$-Gorenstein property and deformation
-of canonical singularities are due to Nakayama
-\cite[VI.5.2]{Nakayama2004}. The total-space and pair statements over
-a smooth disk are recorded in
-\cite[Lemma~10, Remark~10.3]{Kollar2021}. Finitely many such
+statements are recorded in \cite[Lemma~10]{Kollar2021}; deformation of
+canonical singularities is given by \cite[VI.5.2]{Nakayama2004}.
+The total-space and pair statements over a smooth disk are recorded in
+\cite[Remark~10.3]{Kollar2021}. Finitely many such
 neighborhoods cover a compact central fiber. Properness then permits
 a further shrinking of the disk so that their union contains the
 entire restricted family.
@@ -781,7 +868,7 @@ after shrinking $D$, there is a flat analytic deformation
 $\mathfrak V\to D$ of $V_0$ and a proper morphism
 $\mathfrak U\to\mathfrak V$ extending $\varphi_0$.
 This is the proper case of Kollár--Mori's deformation theorem
-\cite[Proposition~11.4.1]{KM1992}.
+\cite[Proposition~11.4, part~(11.4.1)]{KM1992}.
 
 \item\label{an:relative-restriction}
 \textbf{Pluricanonical restriction for a projective bimeromorphic morphism.}
@@ -1033,18 +1120,21 @@ relative Proj is
  (\mathfrak X^+)_0
  =\Proj_{Z_0}(\mathcal B/t\mathcal B)=X_0^+.
 \]
-Each $\mathcal B_m$ has no $t$-torsion. The same holds for
-homogeneous localizations of the graded algebra and for their
-degree-zero parts, which are the standard local algebras of
-relative Proj. For analytic relative Proj, the local charts are
-obtained by analytifying these algebras of finite type; flatness
-of the analytic local rings over the corresponding algebraic
-local rings preserves the injectivity of multiplication by $t$.
-The local rings of the disk
-are discrete valuation rings, and torsion-free modules over them
-are flat. Thus $\mathfrak X^+\to D$ is flat. It is proper because
-$\mathfrak X^+\to\mathfrak Z$ is projective and
-$\mathfrak Z\to D$ is proper.
+Fix $c\in D$ and write $u=t-c$ for a local parameter at $c$.
+Since $\mathfrak Z\to D$ is flat, multiplication by $u$ is
+injective on the local rings of $\mathfrak Z$ along $Z_c$.
+Each $\mathcal B_m$ is torsion-free on the normal space
+$\mathfrak Z$, so multiplication by $u$ is also injective on
+every graded piece. The same holds after homogeneous localization
+and passage to the degree-zero part, and hence on the standard
+local algebras of relative Proj. The analytic local rings of these
+charts are flat over the corresponding local algebras of finite
+type, so multiplication by $u$ remains injective after
+analytification. They are therefore torsion-free, and hence flat,
+over the discrete valuation ring $\OO_{D,c}$.
+As $c$ was arbitrary, $\mathfrak X^+\to D$ is flat.
+It is proper because $\mathfrak X^+\to\mathfrak Z$ is projective
+and $\mathfrak Z\to D$ is proper.
 
 The central fiber $X_0^+$ is the prescribed canonical space.
 By \ref{an:canonical-deform}, after shrinking the disk the total
@@ -1115,12 +1205,32 @@ His semiample-central-fiber result for smooth families with fibers in
 Fujiki's class $\mathcal C$ is the smooth predecessor of the theorem
 below \cite[Corollary~1.10]{Levine1983}.
 
-We implement this method for a canonical central fiber whose singular
-set has codimension at least three. Cohen--Macaulayness of the reflexive
+For projective central fibers, Kollár--Mori proved the corresponding
+invariance theorem for log-terminal singularities smooth in
+codimension two and a globally generated locally free pluricanonical power
+\cite[Theorem~12.5.5]{KM1992}.
+This includes the projective case of the canonical statement below.
+For terminal central fibers, Kollár records that the proof also applies
+in Fujiki's class $\mathcal C$
+\cite[comments following Conjecture~17]{Kollar2021}.
+
+Cao and Păun further develop the infinitesimal method, proving a
+lifting criterion under a weighted $L^2$ condition with a Kähler
+central fiber \cite[Theorem~1.1]{CaoPaun2023}.
+
+Theorem~\ref{thm:terminal-extension} establishes this class-$\mathcal C$
+extension statement for canonical central fibers smooth in codimension
+two, with semiample canonical divisor and a compact Kähler modification.
+Its terminal special case suffices for the proof
+of Theorem~\ref{thm:main}; the canonical formulation gives the
+additional scope of the extension theorem.
+
+We give an explicit logarithmic period proof based on the cyclic-cover
+method of Levine and Kollár--Mori. Cohen--Macaulayness of the reflexive
 canonical powers identifies the relevant first cohomology groups with
 those of the smooth locus. Logarithmic Hodge theory on a compact Kähler
-resolution of the central cover then supplies the period injection
-required by the infinitesimal argument.
+modification of the central cover, combined with a Leray comparison,
+gives the intrinsic period injection used by the infinitesimal argument.
 
 \begin{theorem}\label{thm:terminal-extension}
 Let $f:\mathfrak X\to\Delta$ be a proper flat holomorphic map with connected
@@ -1130,7 +1240,8 @@ $\Q$-Gorenstein, and has canonical singularities. Assume moreover that:
 \begin{enumerate}[label=\textup{(\roman*)},leftmargin=*]
 \item $X$ is normal, has canonical singularities, and satisfies
       $\operatorname{codim}_X\Sing X\ge3$;
-\item $X$ admits a compact Kähler resolution;
+\item there exists a proper bimeromorphic morphism
+      $b:\widetilde X\to X$ from a compact Kähler manifold;
 \item the canonical $\Q$-line bundle $K_X$ is semiample.
 \end{enumerate}
 Then, for every fixed integer $m\ge1$, every section of
@@ -1147,24 +1258,25 @@ singularities, the function
 is constant in a neighborhood of $0$.
 \end{theorem}
 
-The local analytic deformation theorem for canonical singularities guarantees
-the asserted shrinking for the nearby fibers. Over a smooth disk it also
-gives canonical singularities of the total space and the relative
-$\Q$-Gorenstein property
-\cite[VI.5.2]{Nakayama2004} \cite[Lemma 10 and Remark 10.3]{Kollar2021}.
+The analytic deformation results in \ref{an:canonical-deform} guarantee
+the asserted shrinking for the nearby fibers, together with canonical
+singularities of the total space and the relative $\Q$-Gorenstein property
+over a smooth disk.
 A terminal central fiber satisfies \textup{(i)}. A compact Kähler central
 fiber admits a projective resolution that is again compact Kähler, and hence
 satisfies \textup{(ii)}. The conclusion is local for each fixed degree $m$.
 
 \begin{proof}
-Fix the pluricanonical degree $m$ to be extended. We will choose a
-generated canonical power of degree $k\ge m$ and construct its root
-cover. At order $r$, an existing lift of the central defining section
-determines the infinitesimal cover. Its period map, together with
-Levine's trace formula, gives a lift of the central defining section
-to order $r+1$. The character summands of the order-$r$ cover supply
-lifts to order $r$ in every canonical degree at most $k$.
-Coherence then produces analytic extensions.
+Fix the pluricanonical degree $m$.
+We choose a globally generated canonical power of degree $k\ge m$
+and a general central section $s_0$. The character decomposition of
+its cyclic cover will recover every canonical degree from $1$ to $k$.
+Given a lift $s_r$ of $s_0$ to order $r$, we construct the corresponding
+Artinian cover and prove a period injection for it and its truncations.
+Levine's trace formula then annihilates the obstruction to lifting
+$s_0$ to order $r+1$. This yields lifts to every finite order;
+the character summands supply the required degree-$m$ lifts, and
+coherence gives analytic extension.
 
 \subsection{Canonical powers and cohomology on the smooth locus}
 
@@ -1251,9 +1363,12 @@ $F_{k,0}=\OO_X(kK_X)$ is generated by its global sections.
 
 \subsection{The central canonical cyclic cover}
 
-We construct a section $s_0\in H^0(X,kK_X)$ whose canonical root cover is
-normal, Gorenstein, and canonical, and is smooth over
-$X_{\mathrm{reg}}$.
+We choose a section $s_0\in H^0(X,kK_X)$ whose canonical root cover
+is normal, Gorenstein, and canonical, and whose inverse image of
+$X_{\mathrm{reg}}$ is smooth.
+We follow the canonical-cover construction of Kawamata recalled in
+\cite[Lemma~12.5.10]{KM1992}, giving the Gorenstein and analytic
+Bertini details used below.
 
 Consider the analytic canonical line space
 \begin{equation}\label{eq:ext-canonical-line-space}
@@ -1316,8 +1431,6 @@ that it is smooth in codimension one. Hence $Y_0$ is normal.
 Adjunction on its smooth strict transform gives the nonnegative
 exceptional coefficients $a_i$ above, so $Y_0$ is canonical.
 It is also Gorenstein, being a Cartier hypersurface in a Gorenstein space.
-Compare the canonical line-space construction in
-\cite[Lemma 12.5.10]{KM1992}.
 
 The monic relation of degree $k$ defines the finite cover
 \begin{equation}\label{eq:ext-central-algebra}
@@ -1326,8 +1439,9 @@ The monic relation of degree $k$ defines the finite cover
  =\bigoplus_{a=0}^{k-1}\OO_X(-aK_X).
 \end{equation}
 Over $X_{\mathrm{reg}}$, its equation is $w^k=s_0$.
-The branch divisor is smooth and reduced, so the cover is smooth over
-this open set, including at its ramification points. Set
+Since the branch divisor is smooth and reduced,
+$q_0^{-1}(X_{\mathrm{reg}})$ is smooth, including at the ramification
+points. Set
 \[
  Z_0=q_0^{-1}\Sigma,\qquad V_0=Y_0\setminus Z_0.
 \]
@@ -1389,20 +1503,20 @@ over $A_r$, compatibly with its truncations.
 
 \subsection{The logarithmic period injection}
 
-The space $Y_0$ admits a compact Kähler resolution. To construct one,
-choose a compact Kähler resolution $b:\widetilde X\to X$ that is an
-isomorphism over $X_{\mathrm{reg}}$. Since the canonical discrepancies
-are nonnegative, the pullback of $s_0$ can be regarded as a holomorphic
-section of $kK_{\widetilde X}$.
+We first construct a compact Kähler resolution of $Y_0$.
+Choose the compact Kähler resolution $b:\widetilde X\to X$
+in hypothesis \textup{(ii)}.
+Since the canonical discrepancies are nonnegative, the pullback of
+$s_0$ can be regarded as a holomorphic section of $kK_{\widetilde X}$.
 Its root hypersurface is a compact subspace of
 $\mathbf P(\OO_{\widetilde X}\oplus K_{\widetilde X})$;
 the monic equation ensures that it does not meet the divisor at infinity.
-The equation is generically separable, so the hypersurface is reduced.
-A projective embedded resolution is compact Kähler.
-Over the locus where $b$ is an isomorphism, this root cover agrees with
-$Y_0$.
+Its algebra is locally free over $\widetilde X$ and generically separable,
+so the hypersurface is reduced. A projective embedded resolution is
+compact Kähler. Over the dense open set where $b$ is an isomorphism,
+this root cover agrees with $Y_0$.
 
-The resulting map to the finite normal space $Y_0$ extends over the entire
+The resulting map to the normal finite cover $Y_0$ extends over the entire
 resolution. Indeed, locally choose integral generators for the finite
 algebra defining $Y_0$ over the base. On the dense open set where the map
 is defined, their pullbacks satisfy monic equations with locally bounded
@@ -1410,14 +1524,19 @@ coefficients, and the roots are consequently locally bounded.
 The removable-singularity theorem on a normal space extends them
 holomorphically. Their defining equations and gluing identities continue
 from the dense open set. The resulting map is proper and bimeromorphic
-on each component. Further resolution and principalization of the
-inverse-image ideal of $Z_0$, leaving $V_0$ unchanged throughout, give
+on each component. Further projective blowups principalize the
+inverse-image ideal of $Z_0$ and give
 \[
  \widetilde q:\widetilde Y\to Y_0,\qquad
  E=(\widetilde q^{-1}Z_0)_{\mathrm{red}},
 \]
-where $\widetilde Y$ is compact Kähler, $E$ is a simple normal crossing
-divisor, and $\widetilde Y\setminus E=V_0$.
+where $\widetilde Y$ is compact Kähler and $E$ is a simple normal crossing
+divisor. Set
+\[
+ W=\widetilde Y\setminus E,\qquad
+ h=\widetilde q|_W:W\longrightarrow V_0.
+\]
+The morphism $h$ is a proper modification between smooth spaces.
 
 Since $Y_0$ is normal and Gorenstein,
 \eqref{eq:ext-adjunction} extends reflexively to $L_0=\omega_{Y_0}$.
@@ -1427,12 +1546,25 @@ Canonical singularities give inclusions
  \hookrightarrow \omega_{\widetilde Y}
  \hookrightarrow \Omega^n_{\widetilde Y}(\log E).
 \]
-The induced map from $H^1(Y_0,L_0)$ is injective. Indeed, restricting
-its image to $V_0$ gives the original restriction map, which is injective
-by \eqref{eq:ext-depth-cover}.
+We claim that the induced map
+\[
+ H^1(Y_0,L_0)\longrightarrow
+ H^1\bigl(\widetilde Y,\Omega^n_{\widetilde Y}(\log E)\bigr)
+\]
+is injective. The sheaf identity in
+Lemma~\ref{lem:canonical-birational} gives
+$h_*\omega_W=\omega_{V_0}$. The low-degree Leray sequence therefore
+gives an injection
+\[
+ H^1(V_0,\omega_{V_0})\hookrightarrow H^1(W,\omega_W).
+\]
+It is induced by pullback of top differentials. Restricting the claimed
+map to $W$ gives the composite of this injection with the isomorphism
+\eqref{eq:ext-depth-cover} for $r=0$. This proves the claim.
+
 For the compact Kähler simple normal crossing pair $(\widetilde Y,E)$,
 we use logarithmic Hodge-to-de Rham degeneration in the compact Kähler
-form proved by Liu, Rao, and Wan \cite[Theorem~3.2]{LRW2019}.
+formulation of Liu, Rao, and Wan \cite[Theorem~3.2]{LRW2019}.
 The spectral sequence degenerates at $E_1$.
 Since there are no logarithmic forms of degree greater than $n$, the
 edge map from the top column,
@@ -1441,11 +1573,24 @@ edge map from the top column,
  \longrightarrow
  \mathbb H^{n+1}\bigl(\widetilde Y,\Omega^\bullet_{\widetilde Y}(\log E)\bigr),
 \]
-is injective. Logarithmic de Rham comparison identifies the target with
-$H^{n+1}(V_0,\C)$. The composition is therefore an injection
+is injective. Logarithmic de Rham comparison
+\cite[Section~3.2]{LRW2019} identifies the target with
+$H^{n+1}(W,\C)$. We have therefore obtained an injection from
+$H^1(Y_0,L_0)$ to $H^{n+1}(W,\C)$.
+
+Define $\per_0$ by restriction to $V_0$, inclusion of its top
+holomorphic de Rham term, and holomorphic de Rham comparison.
+Naturality under restriction and pullback identifies the preceding
+injective composite with
+\[
+ H^1(Y_0,L_0)\xrightarrow{\ \per_0\ }
+ H^{n+1}(V_0,\C)\xrightarrow{\ h^*\ }H^{n+1}(W,\C).
+\]
+Consequently, the central period map is injective:
 \begin{equation}\label{eq:ext-central-period}
  \per_0:H^1(Y_0,L_0)\hookrightarrow H^{n+1}(V_0,\C).
 \end{equation}
+
 \subsection{Period injections over Artinian thickenings}
 
 Fix an existing lift $s_r$ and its compatible truncations.
@@ -1634,11 +1779,8 @@ Combining \eqref{eq:ext-Levine-obstruction} with
 gives
 $\delta_{r+1}(s_0)=0$ in $H^1(X_r,F_{k,r})$.
 Thus $s_0$ has at least one lift to order $r+1$.
-Starting with $r=0$, induction produces a lift to every finite order.
-Each inductive step uses an existing finite-order lift and produces a lift
-of $s_0$ to the next order. The induction establishes existence at each
-order; compatibility is imposed within the truncation chain of a fixed
-target lift.
+Starting with $r=0$, induction therefore shows that, for every $r\ge0$,
+there exists $s_r\in H^0(X_r,F_{k,r})$ whose restriction to $X$ is $s_0$.
 
 \subsection{Recovery of the lower pluricanonical powers}
 
@@ -1667,8 +1809,12 @@ every finite order.
 
 The passage from lifting to every finite order to analytic local
 constancy is already present, for line bundles in smooth families,
-in \cite[Lemma~1.1]{Levine1983}. We give a direct finite-module argument
-for the reflexive canonical powers occurring here.
+in \cite[Lemma~1.1]{Levine1983}. For coherent analytic sheaves flat
+over the base of a proper flat family over a smooth Stein curve,
+the relation between extension, base change, and torsion freeness is
+developed in \cite[Theorem~1.2 and Appendix~A]{FLR2026}.
+We give a direct finite-module argument for the reflexive canonical
+powers, using the finite-order lifts constructed above.
 
 Set
 \[
@@ -1725,13 +1871,16 @@ plurigenera.
 
 \begin{remark}
 The codimension-three condition gives the restriction isomorphisms
-\eqref{eq:ext-depth-base} and \eqref{eq:ext-depth-cover}. The period injection
-is obtained from the compact Kähler log resolution of the central cover;
-normality and canonical singularities identify the reflexive
+\eqref{eq:ext-depth-base} and \eqref{eq:ext-depth-cover}.
+The compact Kähler resolution is used to establish the central
+period injection; the Artinian period maps are then constructed on
+the smooth open thickenings $V_j/A_j$.
+Normality and canonical singularities identify the reflexive
 pluricanonical powers on nearby fibers.
 \end{remark}
 
 \section{Proof of the main theorem}
+\label{sec:main-proof}
 
 \subsection{Fibers of dimension at most two}
 
@@ -1829,11 +1978,49 @@ S.~Boucksom,
 Ann. Sci. Éc. Norm. Supér. (4) \textbf{37} (2004), no.~1, 45--76.
 \href{https://doi.org/10.1016/j.ansens.2003.04.002}{doi:10.1016/j.ansens.2003.04.002}.
 
+\bibitem{CaoPaun2023}
+J.~Cao and M.~Păun,
+\emph{Infinitesimal extension of pluricanonical forms},
+preprint, 9 December 2020, revised 28 March 2023.
+\href{https://arxiv.org/abs/2012.05063v5}{arXiv:2012.05063v5}.
+
+\bibitem{CRW2026}
+J.~Chen, S.~Rao, and K.~Wang,
+\emph{Matsumura's extension problem for pluricanonical forms in
+Kähler families I: the smooth and essentially Moishezon cases},
+preprint, 30 September 2026.
+\href{https://arxiv.org/abs/2609.40040v1}{arXiv:2609.40040v1}.
+
+\bibitem{DNWZ2026}
+F.~Deng, J.~Ning, Z.~Wang, and X.~Zhou,
+\emph{Invariance of plurigenera for Kähler families with nef canonical bundles},
+preprint, 29 September 2026.
+\href{https://arxiv.org/abs/2609.37804v1}{arXiv:2609.37804v1}.
+
+\bibitem{FLR2026}
+J.~Feng, Y.~Li, and S.~Rao,
+\emph{Aspects of deformation invariance of plurigenera of Kähler varieties},
+preprint, 13 October 2026.
+\href{https://arxiv.org/abs/2610.17817v1}{arXiv:2610.17817v1}.
+
 \bibitem{FujinoVanishing2025}
 O.~Fujino,
 \emph{Vanishing theorems for projective morphisms between complex analytic spaces},
 Math. Res. Lett. \textbf{32} (2025), no.~3, 739--769.
 \href{https://www.math.kyoto-u.ac.jp/~fujino/analytic-vanishing18.pdf}{Author's version}.
+
+\bibitem{HLR2026}
+C.~D.~Hacon, Y.~Li, and S.~Rao,
+\emph{On Pseudo-Effectivity and Volumes of Adjoint Classes in Kähler
+Families with Projective Central Fiber},
+preprint, 4 February 2026, revised 5 March 2026.
+\href{https://arxiv.org/abs/2602.04158v2}{arXiv:2602.04158v2}.
+
+\bibitem{HX2026}
+C.~Hacon and L.~Xie,
+\emph{On the Kähler MMP and the transcendental base-point-free theorem},
+preprint, 27 July 2026.
+\href{https://arxiv.org/abs/2607.24986v1}{arXiv:2607.24986v1}.
 
 \bibitem{Hironaka1975}
 H.~Hironaka,
@@ -1851,7 +2038,7 @@ J. Math. Soc. Japan \textbf{22} (1970), no.~2, 247--261.
 J.~Kollár,
 \emph{Deformations of varieties of general type},
 Milan J. Math. \textbf{89} (2021), 345--354.
-\href{https://arxiv.org/abs/2101.10986v3}{arXiv:2101.10986}.
+\href{https://arxiv.org/abs/2101.10986v3}{arXiv:2101.10986v3}.
 
 \bibitem{KM1992}
 J.~Kollár and S.~Mori,
@@ -1865,11 +2052,25 @@ M.~Levine,
 Invent. Math. \textbf{74} (1983), 293--303.
 \href{https://doi.org/10.1007/BF01394318}{doi:10.1007/BF01394318}.
 
+\bibitem{LPWZ2026}
+Y.~Li, M.~Păun, Z.~Wang, and X.~Zhou,
+\emph{Psh variation of singular Kähler--Einstein metrics and
+Invariance of plurigenera for smooth Kähler families},
+preprint, 6 October 2026.
+\href{https://arxiv.org/abs/2610.07826v1}{arXiv:2610.07826v1}.
+
 \bibitem{LRW2019}
 K.~Liu, S.~Rao, and X.~Wan,
 \emph{Geometry of logarithmic forms and deformations of complex structures},
 J. Algebraic Geom. \textbf{28} (2019), 773--815.
 \href{https://doi.org/10.1090/jag/723}{doi:10.1090/jag/723}.
+
+\bibitem{LW2026}
+K.~Liu and X.~Wan,
+\emph{Invariance of logarithmic plurigenera and adjoint volumes
+in Kähler families},
+preprint, 19 October 2026.
+\href{https://arxiv.org/abs/2610.26519v1}{arXiv:2610.26519v1}.
 
 \bibitem{Nakayama2004}
 N.~Nakayama,
