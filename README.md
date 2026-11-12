@@ -1,17 +1,17 @@
-# Deformation invariance of plurigenera in fiberwise Kähler families
+# Plurigenera and canonical algebras in analytic deformations
 
 Tseng
 
-[Paper (PDF)](plurigenera_invariance.pdf) · [LaTeX source](plurigenera_invariance.tex)
+[Paper (PDF)](plurigenera_kahler_central.pdf) · [LaTeX source](plurigenera_kahler_central.tex)
 
 ## Build
 
-Requires a TeX distribution with XeLaTeX, `latexmk`, and the TeX Gyre Pagella font.
+Requires XeLaTeX, `latexmk`, and the Latin Modern fonts.
 
 ```sh
-latexmk -xelatex plurigenera_invariance.tex
+latexmk -xelatex plurigenera_kahler_central.tex
 ```
 
 ## AI Disclosure
 
-All mathematical derivations and proofs were produced by AI. The human author formulated the problem, provided relevant literature, and guided the research direction.
+All mathematical derivations and proofs were produced by AI. The human author formulated the problem, provided relevant literature, and guided the research direction. AI also assisted in the selection of some of the problems.
